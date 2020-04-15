@@ -1,3 +1,3 @@
-# Graderaide Backend - Solution
+# Graderaide Backend
 
-One possible solution to the Graderaide challenge.
+`npm install` && `npm test`!

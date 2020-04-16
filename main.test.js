@@ -356,4 +356,169 @@ describe('student.getAverage', () => {
     expect(student1.getAverage()).toBe(65);
     expect(student2.getAverage()).toBe(75);
   })
+  
+})
+
+describe('student.averageAll', () => {
+  it(`given a course name and term index, finds the mean average of all the grades in that student's course's term.`, () => {
+    const student1 = Student();
+    student1.courses = [
+        {
+          name: 'WDI',
+          terms: [
+            {
+              grades: [{score: 50}, {score: 70}, {score: 100}, {score: 20}]
+            },
+            {
+              grades: [{score: 40}, {score: 60}, {score: 90}, {score: 10}]
+            }
+          ],
+        },
+        {
+          name: 'Python',
+          terms: [
+            {
+              grades: [{score: 55}, {score: 75}, {score: 105}, {score: 25}]
+            },
+            {
+              grades: [{score: 45}, {score: 65}, {score: 95}, {score: 15}]
+            }
+          ],
+        },
+      ]
+
+    const student2 = Student();
+    student2.courses = [
+        {
+          name: 'UI',
+          terms: [
+            {
+              grades: [{score: 60}, {score: 80}, {score: 110}, {score: 30}]
+            },
+            {
+              grades: [{score: 50}, {score: 70}, {score: 100}, {score: 20}]
+            }
+          ],
+        },
+        {
+          name: 'COBOL',
+          terms: [
+            {
+              grades: [{score: 65}, {score: 85}, {score: 115}, {score: 35}]
+            },
+            {
+              grades: [{score: 55}, {score: 75}, {score: 105}, {score: 25}]
+            }
+          ],
+        },
+      ]
+
+    expect(student1.averageAll('WDI')).toBe(55);
+    expect(student1.averageAll('Python')).toBe(60);
+    expect(student2.averageAll('COBOL')).toBe(70);
+  })
+  it(`given a course name and term index, finds the mean average of all the grades in that student's course's term.`, () => {
+    const student1 = Student();
+    student1.courses = [
+        {
+          name: 'WDI',
+          terms: [
+            {
+              grades: [{score: 50}, {score: 70}, {score: 100}, {score: 20}]
+            },
+            {
+              grades: [{score: 40}, {score: 60}, {score: 90}, {score: 10}]
+            }
+          ],
+        },
+        {
+          name: 'Python',
+          terms: [
+            {
+              grades: [{score: 55}, {score: 75}, {score: 105}, {score: 25}]
+            },
+            {
+              grades: [{score: 45}, {score: 65}, {score: 95}, {score: 15}]
+            }
+          ],
+        },
+      ]
+
+    const student2 = Student();
+    student2.courses = [
+        {
+          name: 'UI',
+          terms: [
+            {
+              grades: [{score: 60}, {score: 80}, {score: 110}, {score: 30}]
+            },
+            {
+              grades: [{score: 50}, {score: 70}, {score: 100}, {score: 20}]
+            }
+          ],
+        },
+        {
+          name: 'COBOL',
+          terms: [
+            {
+              grades: [{score: 65}, {score: 85}, {score: 115}, {score: 35}]
+            },
+            {
+              grades: [{score: 55}, {score: 75}, {score: 105}, {score: 25}]
+            }
+          ],
+        },
+      ]
+      const student3 = Student();
+      student3.courses = [
+          {
+            name: 'WDI',
+          terms: [
+            {
+              grades: [{score: 50}, {score: 70}, {score: 100}, {score: 20}]
+            },
+            {
+              grades: [{score: 40}, {score: 60}, {score: 90}, {score: 10}]
+            }
+          ],
+          },
+          {
+          name: 'Python',
+          terms: [
+            {
+              grades: [{score: 55}, {score: 75}, {score: 105}, {score: 25}]
+            },
+            {
+              grades: [{score: 45}, {score: 65}, {score: 95}, {score: 15}]
+            }
+          ],
+          },
+          {
+            name: 'UI',
+            terms: [
+              {
+                grades: [{score: 60}, {score: 80}, {score: 110}, {score: 30}]
+              },
+              {
+                grades: [{score: 50}, {score: 70}, {score: 100}, {score: 20}]
+              }
+            ],
+          },
+          {
+            name: 'COBOL',
+            terms: [
+              {
+                grades: [{score: 65}, {score: 85}, {score: 115}, {score: 35}]
+              },
+              {
+                grades: [{score: 55}, {score: 75}, {score: 105}, {score: 25}]
+              }
+            ],
+          },
+        ]
+
+    // expect(student1.averageAll()).toBe(57.5);
+    expect(student2.averageAll()).toBe(67.5);
+    // expect(student3.averageAll()).toBe(62.5)
+  })
 })
